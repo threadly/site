@@ -27,13 +27,13 @@
           <li><a href="https://github.com/threadly/threadly/tarball/master">Download source <strong>TAR Ball</strong></a></li>
         </ul> -->
   <ul>
-  <li><a href="javadocs/5.3/index.html">Current stable <strong>Javadocs</strong></a></li>
+  <li><a href="javadocs/5.4/index.html">Current stable <strong>Javadocs</strong></a></li>
   <li><a href="https://github.com/threadly/threadly/wiki">View <strong>Wiki</strong></a></li>
   <li><a href="https://github.com/threadly/threadly">View On <strong>GitHub</strong></a></li>
   </ul>
 
   <p><h3>Latest stable binary: <br>
-  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.3/threadly-5.3.jar">threadly-5.3.jar</a></h3></p>
+  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.4/threadly-5.4.jar">threadly-5.4.jar</a></h3></p>
 
         <p><a href="https://threadly.ci.cloudbees.com/view/Threadly/job/threadly-master/"><img src="https://threadly.ci.cloudbees.com/job/threadly-master/badge/icon"></a></p>
       </header>
@@ -49,6 +49,7 @@
   <p>To get a more complete overview of our features take a look at our <a href="https://github.com/threadly/threadly/wiki/Threadly-Features">features wiki page</a>.</p>
   
   <p><h3>News:</h3>
+  <p>* October 21st - Incremental version released, version 5.4 is now in maven central.</p>
   <p>* July 22nd - Released version 5.2 that includes performance improvements in ListenableFuture/RunnableListenerHelper and ExecutorLimiter.  Changes are mostly simple, but with 5.X we plan to release more frequent but smaller releases.  Because of that we are trying to reduce some extra processes.</p>
   <p>* July 2nd - Patch version 5.1 fixes regression in 5.0 PriorityScheduler where threads may forever go idle.  This is a regression due to an optimization when interactions with other blocking actions using LockSupport.  It is critical that all 5.0 usage is upgraded to use version 5.1 or newer.</p>
   <p>* June 28th - After months of work, released version 5.0!  This is easily the best threadly yet.  It does require the use of java 8 and newer, but that means we are also able to take advantage of java 8 performance improvements and ergonomic improvements.  I have been hesitant to release this because there is still so much more I want to do.  Other projects like <a href="https://github.com/threadly/auroraArc">auroraArc</a> have been taking more of my time.  That said, I do plan to bring some improved documentation and benchmarks out soon.  Right now the <a href="https://github.com/threadly/threadly/wiki">wiki</a> is the best source of information, but if anyone would like to help improve this website it would be greatly appreciated!.</p>
