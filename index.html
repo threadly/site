@@ -27,13 +27,13 @@
           <li><a href="https://github.com/threadly/threadly/tarball/master">Download source <strong>TAR Ball</strong></a></li>
         </ul> -->
   <ul>
-  <li><a href="javadocs/5.7/index.html">Current stable <strong>Javadocs</strong></a></li>
+  <li><a href="javadocs/5.8/index.html">Current stable <strong>Javadocs</strong></a></li>
   <li><a href="https://github.com/threadly/threadly/wiki">View <strong>Wiki</strong></a></li>
   <li><a href="https://github.com/threadly/threadly">View On <strong>GitHub</strong></a></li>
   </ul>
 
   <p><h3>Latest stable binary: <br>
-  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.7/threadly-5.7.jar">threadly-5.7.jar</a></h3></p>
+  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.8/threadly-5.8.jar">threadly-5.8.jar</a></h3></p>
 
         <p><a href="https://threadly.ci.cloudbees.com/view/Threadly/job/threadly-master/"><img src="https://threadly.ci.cloudbees.com/job/threadly-master/badge/icon"></a></p>
       </header>
@@ -49,6 +49,7 @@
   <p>To get a more complete overview of our features take a look at our <a href="https://github.com/threadly/threadly/wiki/Threadly-Features">features wiki page</a>.</p>
   
   <p><h3>News:</h3>
+  <p>* December 28th - Released some new minor features in threadly version 5.8.</p>
   <p>* December 19th - Released version 5.7.  This is a fairly significant feature expansion release.  Allowing limiters to not be impacted by the listener (monads) execution if desired.  As well as the newly added `CentralThreadlyPool`.  Allowing the limiters to not limit listeners / map functions allows you to be sure you are limiting a core task functionality, and not also including limits towards operations which may occur after that core task completes.  The `CentralThreadlyPool` allows you to gain access to a scheduler / executor for the immediate needs, without having to worry about a scheduler life cycle (ie shutting down).  Internally this pool will try to reduce thread churn as much as possible while also making sure that the threads are available for the task demand requested (and not letting any single scheduler fully take control over the pool).  This feature has been one in the works for a while, and I am pretty happy with how it came out, so I highly encourage you to <a href="javadocs/5.7/org/threadly/concurrent/CentralThreadlyPool.html">look at it!</a></p>
   <p>* November 27th - Released version 5.6 which includes minor quality of life improvements as well as improvements to canceling futures from threadly monads.  As always the details are included in the <a href='https://github.com/threadly/threadly/releases/tag/release-5.6'>full release notes</a>.</p>
   <p>* October 31st - Patch version 5.5 to address low priority tasks not completing on scheduler shutdown.  There is no javadocs for this release due to there being no API changes.</p>
