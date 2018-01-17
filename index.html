@@ -27,13 +27,13 @@
           <li><a href="https://github.com/threadly/threadly/tarball/master">Download source <strong>TAR Ball</strong></a></li>
         </ul> -->
   <ul>
-  <li><a href="javadocs/5.10/index.html">Current stable <strong>Javadocs</strong></a></li>
+  <li><a href="javadocs/5.11/index.html">Current stable <strong>Javadocs</strong></a></li>
   <li><a href="https://github.com/threadly/threadly/wiki">View <strong>Wiki</strong></a></li>
   <li><a href="https://github.com/threadly/threadly">View On <strong>GitHub</strong></a></li>
   </ul>
 
   <p><h3>Latest stable binary: <br>
-  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.10/threadly-5.10.jar">threadly-5.10.jar</a></h3></p>
+  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.11/threadly-5.11.jar">threadly-5.11.jar</a></h3></p>
 
         <p><a href="https://threadly.ci.cloudbees.com/view/Threadly/job/threadly-master/"><img src="https://threadly.ci.cloudbees.com/job/threadly-master/badge/icon"></a></p>
       </header>
@@ -49,6 +49,7 @@
   <p>To get a more complete overview of our features take a look at our <a href="https://github.com/threadly/threadly/wiki/Threadly-Features">features wiki page</a>.</p>
   
   <p><h3>News:</h3>
+  <p>* January 17th - 5.11 release to provide pre-5.10 functionality when mapping ListenableFutures as `throwMap`.  It was discovered that there is good reason to sometimes have the mapper function throw an exception, and that those should not be treated as "uncaught" exceptions.  The default behavior of `map` will still report the exception to `ExceptionUtils.handleException`, since that is the behavior most people probably expect.  But `throwMap` was added to faciliate the rare use case where you want / expect an exception to be thrown.</p>
   <p>* January 16th - 5.10 release to include more minor bug fixes, as well as the opportunity to further optimize listeners being executed on `ListenableFuture`'s.  Read more in the <a href='javadocs/5.10/org/threadly/concurrent/future/ListenableFuture.ListenerOptimizationStrategy.html'>ListenableFuture.ListenerOptimizationStrategy javadocs</a>.</p>
   <p>* January 5th - Patch release to fix very old bug in `StripedLock`.</p>
   <p>* December 28th - Released some new minor features in threadly version 5.8.</p>
