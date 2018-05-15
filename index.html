@@ -27,13 +27,13 @@
           <li><a href="https://github.com/threadly/threadly/tarball/master">Download source <strong>TAR Ball</strong></a></li>
         </ul> -->
   <ul>
-  <li><a href="javadocs/5.18/index.html">Current stable <strong>Javadocs</strong></a></li>
+  <li><a href="javadocs/5.19/index.html">Current stable <strong>Javadocs</strong></a></li>
   <li><a href="https://github.com/threadly/threadly/wiki">View <strong>Wiki</strong></a></li>
   <li><a href="https://github.com/threadly/threadly">View On <strong>GitHub</strong></a></li>
   </ul>
 
   <p><h3>Latest stable binary: <br>
-  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.18/threadly-5.18.jar">threadly-5.18.jar</a></h3></p>
+  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.19/threadly-5.19.jar">threadly-5.19.jar</a></h3></p>
 
         <p><a href="https://threadly.ci.cloudbees.com/view/Threadly/job/threadly-master/"><img src="https://threadly.ci.cloudbees.com/job/threadly-master/badge/icon"></a></p>
       </header>
@@ -49,6 +49,7 @@
   <p>To get a more complete overview of our features take a look at our <a href="https://github.com/threadly/threadly/wiki/Threadly-Features">features wiki page</a>.</p>
   
   <p><h3>News:</h3>
+  <p>* May 15th - Following closely behind 5.18, 5.19 provides internal improvements as well as minor features that can be read about in the changelog.</p>
   <p>* May 4th - A feature expansion release of 5.18 was published to maven central today.  The primary feature in this release is the add of `mapFailure` and `flatMapFailure` to `ListenableFuture`.  These functions allow you to async transform futures from the error conditions back into results or into different error conditions.</p>
   <p>* April 20th - 5.16 was released today.  I had planned for 5.16 to be a feature expansion release.  I have been working on a new sub-pool that will help threadly's central pool.  However it's not ready yet.  Instead this release contains a bug fix for the central pool where `isolatedTask` recurring tasks could decrement the central pools size after every run, eventually resulting in logging exceptions as the pool tries to shrink itself below zero.  This critical bug fix pushed the release forward.  But I am also excited to announce a new feature in FutureUtils.  Now in addition to `scheduleWhile` there is `executeWhile`.  This is more flexible to other pool types (as it does not even require a pool, just a `ListenableFuture`).  It is conceptually the same, except where a delay for retry is not desired.</p>
   <p>* March 6th - 5.15 was relesed today with new features, improvements, and some small bug fixes.  All the details can be found in the <a href='https://github.com/threadly/threadly/releases/tag/release-5.15'>Release notes</a>.</p>
