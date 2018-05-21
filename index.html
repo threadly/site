@@ -33,9 +33,9 @@
   </ul>
 
   <p><h3>Latest stable binary: <br>
-  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.20/threadly-5.20.jar">threadly-5.20.jar</a></h3></p>
+  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.21/threadly-5.21.jar">threadly-5.21.jar</a></h3></p>
 
-        <p><a href="https://threadly.ci.cloudbees.com/view/Threadly/job/threadly-master/"><img src="https://threadly.ci.cloudbees.com/job/threadly-master/badge/icon"></a></p>
+        <p><img src="https://badge.buildkite.com/7f78724dd03f9e47cc655d0b645ed39f7d0558e4f1b4bd7e91.svg"></p>
       </header>
       <section>
         <p>A library of java tools to assist with development of concurrent java applications.  This is designed to be a complement to java.util.concurrent and uses 
@@ -49,6 +49,7 @@
   <p>To get a more complete overview of our features take a look at our <a href="https://github.com/threadly/threadly/wiki/Threadly-Features">features wiki page</a>.</p>
   
   <p><h3>News:</h3>
+  <p>* May 20th - 5.21 was released, focused around another bug fix around canceling collections of Futures produced by FutureUtils.  We also now are using <a href="http://buildkite.com">buildkite</a> to perform our CI solution.  Having talked with them I am pretty confident this will be a better fit for our needs.</p>
   <p>* May 18th - 5.20 was released which includes important bug fixes for communicating the "canceled" state after a map / flatMap operation on a future.  It also includes internal performance improvements and minor features expansions (which can be read about in the changelog).</p>
   <p>* May 15th - Following closely behind 5.18, 5.19 provides internal improvements as well as minor features that can be read about in the changelog.</p>
   <p>* May 4th - A feature expansion release of 5.18 was published to maven central today.  The primary feature in this release is the add of `mapFailure` and `flatMapFailure` to `ListenableFuture`.  These functions allow you to async transform futures from the error conditions back into results or into different error conditions.</p>
@@ -78,7 +79,6 @@
     </section>
     <footer>
       <p>This project is maintained by <a href="https://github.com/jentfoo">jentfoo</a></p>
-      <p><img src="http://www.cloudbees.com/sites/default/files/Button-Powered-by-CB.png"></p>
     </footer>
   </div>
   <script src="javascripts/scale.fix.js"></script>
