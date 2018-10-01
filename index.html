@@ -27,13 +27,13 @@
           <li><a href="https://github.com/threadly/threadly/tarball/master">Download source <strong>TAR Ball</strong></a></li>
         </ul> -->
   <ul>
-  <li><a href="javadocs/5.26/index.html">Current stable <strong>Javadocs</strong></a></li>
+  <li><a href="javadocs/5.28/index.html">Current stable <strong>Javadocs</strong></a></li>
   <li><a href="https://github.com/threadly/threadly/wiki">View <strong>Wiki</strong></a></li>
   <li><a href="https://github.com/threadly/threadly">View On <strong>GitHub</strong></a></li>
   </ul>
 
   <p><h3>Latest stable binary: <br>
-  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.27/threadly-5.27.jar">threadly-5.27.jar</a></h3></p>
+  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.28/threadly-5.28.jar">threadly-5.28.jar</a></h3></p>
 
         <p><img src="https://badge.buildkite.com/7f78724dd03f9e47cc655d0b645ed39f7d0558e4f1b4bd7e91.svg"></p>
       </header>
@@ -49,6 +49,7 @@
   <p>To get a more complete overview of our features take a look at our <a href="https://github.com/threadly/threadly/wiki/Threadly-Features">features wiki page</a>.</p>
   
   <p><h3>News:</h3>
+  <p>* October 1st - 5.28 released with several improvements around ListenableFuture's.  Described in detail on the <a href="https://github.com/threadly/threadly/releases/tag/release-5.28">changelog</a>, this release includes a minor bugfix around canceling flatMap'ed futures, as well as significant debuging improvements.  This release provides the ability to get the stack of a running future (or if a mapped future waiting on a result, the stack of the currently executing parent future).</p>
   <p>* July 3rd - 5.27 was released which includes minor changes to further the improvement introduced in 5.26.</p>
   <p>* July 1st - 5.26 was released, providing minor internal performance improvements to PriorityScheduler, and heap improvements when adapting DoNothingRunnable's into Callable's.</p>
   <p>* June 19th - 5.25 was released.  This contains a number of internal improvements and external improvements.  Read about them in the <a href="https://github.com/threadly/threadly/releases/tag/release-5.25">release details</a>.</p>
