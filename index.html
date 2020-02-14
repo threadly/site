@@ -27,28 +27,29 @@
           <li><a href="https://github.com/threadly/threadly/tarball/master">Download source <strong>TAR Ball</strong></a></li>
         </ul> -->
   <ul>
-  <li><a href="javadocs/5.41/index.html">Current stable <strong>Javadocs</strong></a></li>
+  <li><a href="javadocs/5.43/index.html">Current stable <strong>Javadocs</strong></a></li>
   <li><a href="https://github.com/threadly/threadly/wiki">View <strong>Wiki</strong></a></li>
   <li><a href="https://github.com/threadly/threadly">View On <strong>GitHub</strong></a></li>
   </ul>
 
   <p><h3>Latest stable binary: <br>
-  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.42/threadly-5.42.jar">threadly-5.42.jar</a></h3></p>
+  <a href="https://oss.sonatype.org/content/groups/staging/org/threadly/threadly/5.43/threadly-5.43.jar">threadly-5.43.jar</a></h3></p>
 
         <p><img src="https://badge.buildkite.com/7f78724dd03f9e47cc655d0b645ed39f7d0558e4f1b4bd7e91.svg"></p>
       </header>
       <section>
         <p>A library of java tools to assist with development of concurrent java applications.  This is designed to be a complement to java.util.concurrent to provide functionality more tools for making safe concurrent implementations.</p>
 
-        <p>This library provides a variety of thread pooling designs, ranging from the unique priority based, high performance, thread pools (<a href="javadocs/5.41/org/threadly/concurrent/PriorityScheduler.html">PriorityScheduler</a> and <a href="javadocs/5.41/org/threadly/concurrent/SingleThreadScheduler.html">SingleThreadScheduler</a> for example).  To the ability to create a hierarchy of thready pools (sub pools in threadly named <a href="javadocs/5.41/org/threadly/concurrent/wrapper/limiter/package-summary.html">"Limiters"</a>, or behavior controlling pool wrappers like the <a href="javadocs/5.41/org/threadly/concurrent/wrapper/KeyDistributedExecutor.html">KeyDistributedExecutor</a>.  In all cases threadly pools are designed to be safe, able to be garbage collected (or even use the <a href="javadocs/5.41/org/threadly/concurrent/CentralThreadlyPool.html">CentralThreadlyPool</a> for when you really don't want to worry about the pool life cycle).</p>
+        <p>This library provides a variety of thread pooling designs, ranging from the unique priority based, high performance, thread pools (<a href="javadocs/5.43/org/threadly/concurrent/PriorityScheduler.html">PriorityScheduler</a> and <a href="javadocs/5.43/org/threadly/concurrent/SingleThreadScheduler.html">SingleThreadScheduler</a> for example).  To the ability to create a hierarchy of thready pools (sub pools in threadly named <a href="javadocs/5.43/org/threadly/concurrent/wrapper/limiter/package-summary.html">"Limiters"</a>, or behavior controlling pool wrappers like the <a href="javadocs/5.43/org/threadly/concurrent/wrapper/KeyDistributedExecutor.html">KeyDistributedExecutor</a>.  In all cases threadly pools are designed to be safe, able to be garbage collected (or even use the <a href="javadocs/5.43/org/threadly/concurrent/CentralThreadlyPool.html">CentralThreadlyPool</a> for when you really don't want to worry about the pool life cycle).</p>
 
-        <p>Beyond the pools, threadly's <a href="javadocs/5.41/org/threadly/concurrent/future/ListenableFuture.html">ListenableFuture</a> provides a very clean and functional way to implement async callback / transformation operations.  Allowing for simple <a href="javadocs/5.41/org/threadly/concurrent/future/ListenableFuture.html#map(java.util.function.Function)">".map"</a> and <a href="javadocs/5.41/org/threadly/concurrent/future/ListenableFuture.html#flatMap(java.util.function.Function)">".flatMap"</a> like transformations to provide monad like semantics.  In addition tools like <a href="javadocs/5.41/org/threadly/concurrent/future/FutureUtils.html">FutureUtils</a> helps easily make powerful use of these basic features, as well as tooling when managing collections of futures.</p>
+        <p>Beyond the pools, threadly's <a href="javadocs/5.4333rg/threadly/concurrent/future/ListenableFuture.html">ListenableFuture</a> provides a very clean and functional way to implement async callback / transformation operations.  Allowing for simple <a href="javadocs/5.43/org/threadly/concurrent/future/ListenableFuture.html#map(java.util.function.Function)">".map"</a> and <a href="javadocs/5.43/org/threadly/concurrent/future/ListenableFuture.html#flatMap(java.util.function.Function)">".flatMap"</a> like transformations to provide monad like semantics.  In addition tools like <a href="javadocs/5.43/org/threadly/concurrent/future/FutureUtils.html">FutureUtils</a> helps easily make powerful use of these basic features, as well as tooling when managing collections of futures.</p>
 
         <p>This library not only helps with providing tools to design safe and easy to understand designs, but also includes utilities for making it easier to unit test and debug concurrent implementations.</p>
 
   <p>To get a more complete overview of our features take a look at our <a href="https://github.com/threadly/threadly/wiki/Threadly-Features">features wiki page</a>.</p>
   
   <p><h3>News:</h3>
+  <p>* February 13th - 5.43 released, most notable is the move of the org.threadly.test package to the new <a href="https://github.com/threadly/threadly-test">threadly-test</a> archive (maven coordinates org.threadly:threadly-test:0.1).  This is planned to be the last release before we switch to the 6.0 API.  The <a href="https://github.com/threadly/threadly/releases/tag/release-5.43">release details</a> as always provides complete details on included changes.</p>
   <p>* December 9th - 5.42 was released, providing performance improvements to RateLimiterExecutor and ExecutorLimiter.  The gains in RateLimiterExecutor being most significant, providing huge improvements in cases where thread contention exists.</p> 
   <p>* October 24th - Another 5.X release, focused primarily on performance improvements and other internal updates.  The <a href="https://github.com/threadly/threadly/releases/tag/release-5.41">release details</a> outlines the specific areas of improvement.</p>
   <p>* September 4th - As we start to think more about a 6.0 release, backwards compatible API changes have been provided in the new <a href="https://github.com/threadly/threadly/releases/tag/release-5.40">5.40 release</a>.  In this we moved and renamed Watchdog into the new watchdog package.  As part of this we also added a new "PollingWatchdog" to be able to provide more flexible timeout mechanics when desired.</p>
