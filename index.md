@@ -4,82 +4,113 @@ keywords: threadly concurrency java aurora jdbc
 tags: [getting_started]
 sidebar: mydoc_sidebar
 permalink: index.html
-summary: These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about working with other aspects of this theme and Jekyll.
+summary: A collection of java libraries to assist with development of java services to help bring new levels of safety, performance, and reliability.concurrent java applications.  Ranging from concurrency tools designed to complement to java.util.concurrent, unit testing tools, NIO netwrking, AWS Aurora JDBC driver.
 ---
 
-## Build the Theme
+## Threadly Concurrency Overview
 
-Follow these instructions to build the theme.
+[Threadly](https://github.com/threadly/threadly/) provides a variety of thread pooling designs, ranging from the unique priority based, high performance, thread pools ([PriorityScheduler](javadocs/5.43/org/threadly/concurrent/PriorityScheduler.html) and [SingleThreadScheduler](javadocs/5.43/org/threadly/concurrent/SingleThreadScheduler.html) for example).  To the ability to create a hierarchy of thready pools (sub pools in threadly named ["Limiters"](javadocs/5.43/org/threadly/concurrent/wrapper/limiter/package-summary.html), or behavior controlling pool wrappers like the [KeyDistributedExecutor](javadocs/5.43/org/threadly/concurrent/wrapper/KeyDistributedExecutor.html).  In all cases threadly pools are designed to be safe, able to be garbage collected (or even use the [CentralThreadlyPool](javadocs/5.43/org/threadly/concurrent/CentralThreadlyPool.html) for when you really don't want to worry about the pool life cycle).
 
-### 1. Download the theme
+Beyond the pools, threadly's [ListenableFuture](javadocs/5.4333rg/threadly/concurrent/future/ListenableFuture.html) provides a very clean and functional way to implement async callback / transformation operations.  Allowing for simple [".map"]("javadocs/5.43/org/threadly/concurrent/future/ListenableFuture.html#map(java.util.function.Function)") and [".flatMap"]("javadocs/5.43/org/threadly/concurrent/future/ListenableFuture.html#flatMap(java.util.function.Function)") like transformations to provide monad like semantics.  In addition tools like [FutureUtils](javadocs/5.43/org/threadly/concurrent/future/FutureUtils.html) helps easily make powerful use of these basic features, as well as tooling when managing collections of futures.
 
-First, download or clone the theme from the [Github repo](https://github.com/tomjoht/documentation-theme-jekyll). Most likely you won't be pulling in updates once you start customizing the theme, so downloading the theme (instead of cloning it) probably makes the most sense. In Github, click the **Clone or download** button, and then click **Download ZIP**.
+To get a more complete overview of our features take a look at our [threadly features wiki page](https://github.com/threadly/threadly/wiki/Threadly-Features).
 
-### 2. Install Jekyll
+Include threadly in your project with the maven coordinates `org.threadly:threadly:5.43`.
 
-If you've never installed or run a Jekyll site locally on your computer, follow these instructions to install Jekyll:
+## Threadly Unit Test Overview
+[Threadly-Test](https://github.com/threadly/threadly-test) provides utilities to take asynchornous designs and make them easy to unit test deterministicly and quickly.  Fitting into the threadly ecosystem is the [TestableScheduler](https://threadly.github.io/threadly-test/javadocs/0.1/org/threadly/test/concurrent/TestableScheduler.html) which will only execute the provided tasks when `.tick()` is invoked.  Other examples are the [AsyncVerifier](https://threadly.github.io/threadly-test/javadocs/0.1/org/threadly/test/concurrent/AsyncVerifier.html) and the [TestCondition](https://threadly.github.io/threadly-test/javadocs/0.1/org/threadly/test/concurrent/TestCondition.html) which help in checking async operations, or blocking till an async operation completes as expected.
 
-* [Install Jekyll on Mac][mydoc_install_jekyll_on_mac]
-* [Install Jekyll on Windows][mydoc_install_jekyll_on_windows]
+To get a more complete overview of our test features take a look at our [threadly-test features wiki page](https://github.com/threadly/threadly-test/wiki/Threadly-Features,-Unit-Testing).
 
-### 3. Install Bundler
+Include threadly-test in your project with the maven coordinates `org.threadly:threadly-test:0.1`.
 
-In case you haven't installed Bundler, install it:
+## AuroraArc Overview
+[AuroraArc](https://github.com/threadly/auroraArc) is an AWS Aurora aware JDBC driver.  This JDBC driver takes advantage of Aurora's rapid failover capabilities.  The driver monitors all members in the cluster individually and will distribute requests across the cluster to try and provide the best performance and reliability.  This includes using hints from the application to know when requests should be sent to replica servers.  It also interpets errors to try and provide degraded service if possible, or otherwise make use of Aurora's rapid failover capabilities.
 
-```
-gem install bundler
-```
+Use the mysql AuroraArc driver with the maven coordinates `org.threadly:auroraArc-mysql:0.13` and the postgresql AuroraArc driver with the coordinates `org.threadly:auroraArc-psql:0.13`.
 
-You'll want [Bundler](http://bundler.io/) to make sure all the Ruby gems needed work well with your project. Bundler sorts out dependencies and installs missing gems or matches up gems with the right versions based on gem dependencies.
+## Litesockets Overview
 
-### 4. Option 1: Build the Theme (*without* the github-pages gem) {#option1}
+[Litesockets](https://github.com/threadly/litesockets/) provides a high performance non-blocking networking abstraction.  It uses the [KeyDistributedExecutor](javadocs/5.43/org/threadly/concurrent/wrapper/KeyDistributedExecutor.html) to have every individual connections be handled in a single threaded manner.  This allows the user to not need to consider concurrency concerns unless using datastructures that are shared by multiple connections.
 
-Use this option if you're not planning to publish your Jekyll site using [Github Pages](https://pages.github.com/).
+Litesockets can be included from the maven central coordinates `org.threadly:litesockets:4.14`.
 
-Bundler's Gemfile specifies how project dependencies are managed. Although this project includes a Gemfile, this theme doesn't have any dependencies beyond core Jekyll. The Gemfile is used to list gems needed for publishing on Github Pages. **If you're not planning to have Github Pages build your Jekyll project, delete these two files from the theme's root directory:**
+## News
 
-* Gemfile
-* Gemfile.lock
+### February 16th - New website
+A long overdue replacement of the website.  This new site allows us to better provide documentation across all of our libraries and tools.  We can now provide a lot more information with this layout, and links to all our javadocs.
 
-If you've never run Jekyll on your computer (you can check with `jekyll --version`), you may need to install the jekyll gem:
+### February 13th - threadly 5.43 + threadly-test 0.1 released
+Most notable is the move of the org.threadly.test package to the new <a href="https://github.com/threadly/threadly-test">threadly-test</a> archive (maven coordinates `org.threadly:threadly-test:0.1`).  This is planned to be the last release before we switch to the 6.0 API.  The <a href="https://github.com/threadly/threadly/releases/tag/release-5.43">release details</a> as always provides complete details on included changes.
 
-```
-gem install jekyll
-```
+### December 9th - threadly 5.42 released
+5.42 provides performance improvements to RateLimiterExecutor and ExecutorLimiter.  The gains in RateLimiterExecutor being most significant, providing huge improvements in cases where thread contention exists. 
 
-Now run jekyll serve (first change directories (`cd`) to where you downloaded the project):
+### October 24th - threadly 5.41 released
+Another 5.X release focused primarily on performance improvements and other internal updates.  The <a href="https://github.com/threadly/threadly/releases/tag/release-5.41">release details</a> outlines the specific areas of improvement.
 
-```
-jekyll serve
-```
+### September 4th - threadly 5.40 released
+As we start to think more about a 6.0 release, backwards compatible API changes have been provided in the new <a href="https://github.com/threadly/threadly/releases/tag/release-5.40">5.40 release</a>.  In this we moved and renamed Watchdog into the new watchdog package.  As part of this we also added a new "PollingWatchdog" to be able to provide more flexible timeout mechanics when desired.
 
-### 4. Option 2: Build the Theme (*with* the github-pages gem) {#option2}
+### August 25th - threadly 5.39 released
+<a href="https://github.com/threadly/threadly/releases/tag/release-5.39">5.39</a> released, adding ConfigureableThreadFactory.builder() as an easier way to configure the ThreadFactory.  Also included are some minor internal improvements to ListenableFuture.map operations.  We are starting to formalize a 6.0 release, take a look at the <a href="https://github.com/threadly/threadly/milestone/53">6.0 Release Milestone</a>.  If you have any ideas of what would be good to include in a upcoming 6.0, or even a future 7.0 release, feel free to open an <a href="https://github.com/threadly/threadly/issues">issue</a>.
 
-If you *are* in fact publishing on Github Pages, leave the Gemfile and Gemfile.lock files in the theme.The Gemfile tells Jekyll to use the github-pages gem. **However, note that you cannot use the normal `jekyll serve` command with this gem due to dependency conflicts between the latest version of Jekyll and Github Pages** (which are noted [briefly here](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)).
+### June 25th - threadly 5.38 released
+This release provides some minor feature expansions to FutureUtils and the new ArrayIterator.  Read about them in the <a href="https://github.com/threadly/threadly/releases/tag/release-5.38">release details</a>.
 
-You need Bundler to resolve these dependency conflicts. Use Bundler to install all the needed Ruby gems:
+### May 23rd - threadly 5.37 released
+This release includes new features around queue consumption and work processing.  See the new package org.threadly.concurrent.processing and the <a href="https://github.com/threadly/threadly/releases/tag/release-5.37">release details</a>.
 
-```
-bundle update
-```
+### March 13th - threadly 5.34 released
+This release includes significant changes to the ListenableFuture API.  Defined in the <a href="https://github.com/threadly/threadly/releases/tag/release-5.34">release details</a>, the most significant changes are the depreciation of `addCallback` and `addListener`.  Now providing more functionality with a `callback` and `listener` function that return the instance, as well as a `resultCallback` and `failureCallback` function for when there is only one state needing checked.
 
-Then *always* use this command to build Jekyll:
+### May 18th
+5.20 was released which includes important bug fixes for communicating the "canceled" state after a map / flatMap operation on a future.  It also includes internal performance improvements and minor features expansions (which can be read about in the changelog).
 
-```
-bundle exec jekyll serve
-```
+### May 15th
+Following closely behind 5.18, 5.19 provides internal improvements as well as minor features that can be read about in the changelog.
 
-If you want to shorten this long command, you can put this code in a file such as jekyll.sh (on a Mac) and then simply type `. jekyll.sh` to build Jekyll.
+### May 4th
+A feature expansion release of 5.18 was published to maven central today.  The primary feature in this release is the add of `mapFailure` and `flatMapFailure` to `ListenableFuture`.  These functions allow you to async transform futures from the error conditions back into results or into different error conditions.
 
-## Running the site in Docker
+### April 20th
+5.16 was released today.  I had planned for 5.16 to be a feature expansion release.  I have been working on a new sub-pool that will help threadly's central pool.  However it's not ready yet.  Instead this release contains a bug fix for the central pool where `isolatedTask` recurring tasks could decrement the central pools size after every run, eventually resulting in logging exceptions as the pool tries to shrink itself below zero.  This critical bug fix pushed the release forward.  But I am also excited to announce a new feature in FutureUtils.  Now in addition to `scheduleWhile` there is `executeWhile`.  This is more flexible to other pool types (as it does not even require a pool, just a `ListenableFuture`).  It is conceptually the same, except where a delay for retry is not desired.
 
-You can also use Docker to directly build and run the site on your local machine. Just clone the repo and run the following from your working dir:
-```
-docker-compose build --no-cache && docker-compose up
-```
-The site should now be running at [http://localhost:4000/](http://localhost:4000/).
+### March 6th
+5.15 was released today with new features, improvements, and some small bug fixes.  All the details can be found in the <a href='https://github.com/threadly/threadly/releases/tag/release-5.15'>Release notes</a>.
 
-This is perhaps the easiest way to see how your site would actually look.
+### February 16th
+5.14 minor release with new StringUtils functionality and javadoc improvements.
+
+### February 4th
+5.13 incremental improvements release. <a href='https://github.com/threadly/threadly/releases/tag/release-5.13'>Release notes</a> contain all the details, but this includes a variety of small incremental improvements.  Typically not enough to warrant a release, with 5.X we plan to have more small releases like this.
+
+### January 22nd
+5.12 bug fix release for unlikely, but possible, race condition when using the new ListenableFuture listener execution optimizations introduced in 5.10.
+
+### January 17th
+5.11 release to provide pre-5.10 functionality when mapping ListenableFutures as `throwMap`.  It was discovered that there is good reason to sometimes have the mapper function throw an exception, and that those should not be treated as "uncaught" exceptions.  The default behavior of `map` will still report the exception to `ExceptionUtils.handleException`, since that is the behavior most people probably expect.  But `throwMap` was added to facilitate the rare use case where you want / expect an exception to be thrown.
+
+### January 16th
+5.10 release to include more minor bug fixes, as well as the opportunity to further optimize listeners being executed on `ListenableFuture`'s.  Read more in the <a href='javadocs/5.10/org/threadly/concurrent/future/ListenableFuture.ListenerOptimizationStrategy.html'>ListenableFuture.ListenerOptimizationStrategy javadocs</a>.
+
+### December 19th
+Released version 5.7.  This is a fairly significant feature expansion release.  Allowing limiters to not be impacted by the listener (monads) execution if desired.  As well as the newly added `CentralThreadlyPool`.  Allowing the limiters to not limit listeners / map functions allows you to be sure you are limiting a core task functionality, and not also including limits towards operations which may occur after that core task completes.  The `CentralThreadlyPool` allows you to gain access to a scheduler / executor for the immediate needs, without having to worry about a scheduler life cycle (ie shutting down).  Internally this pool will try to reduce thread churn as much as possible while also making sure that the threads are available for the task demand requested (and not letting any single scheduler fully take control over the pool).  This feature has been one in the works for a while, and I am pretty happy with how it came out, so I highly encourage you to <a href="javadocs/5.7/org/threadly/concurrent/CentralThreadlyPool.html">look at it!</a>
+
+### November 27th
+Released version 5.6 which includes minor quality of life improvements as well as improvements to canceling futures from threadly monads.  As always the details are included in the <a href='https://github.com/threadly/threadly/releases/tag/release-5.6'>full release notes</a>.
+
+### October 31st
+Patch version 5.5 to address low priority tasks not completing on scheduler shutdown.  There is no javadocs for this release due to there being no API changes.
+
+### July 22nd
+Released version 5.2 that includes performance improvements in ListenableFuture/RunnableListenerHelper and ExecutorLimiter.  Changes are mostly simple, but with 5.X we plan to release more frequent but smaller releases.  Because of that we are trying to reduce some extra processes.
+
+### July 2nd
+Patch version 5.1 fixes regression in 5.0 PriorityScheduler where threads may forever go idle.  This is a regression due to an optimization when interactions with other blocking actions using LockSupport.  It is critical that all 5.0 usage is upgraded to use version 5.1 or newer.
+
+### June 28th
+After months of work, released version 5.0!  This is easily the best threadly yet.  It does require the use of java 8 and newer, but that means we are also able to take advantage of java 8 performance improvements and ergonomic improvements.  I have been hesitant to release this because there is still so much more I want to do.  Other projects like <a href="https://github.com/threadly/auroraArc">auroraArc</a> have been taking more of my time.  That said, I do plan to bring some improved documentation and benchmarks out soon.  Right now the <a href="https://github.com/threadly/threadly/wiki">wiki</a> is the best source of information, but if anyone would like to help improve this website it would be greatly appreciated!.
 
 ## Configure the sidebar
 
@@ -299,10 +330,6 @@ Leave the output as `output: pdf` for these frontmatter pages so that they don't
 
 For more detail on the sidebar, see [Sidebar navigation][mydoc_sidebar_navigation] and [YAML tutorial][mydoc_yaml_tutorial].
 
-## Comments
-
-The theme integrates [Commento.io](https://commento.io/) for comments below pages and posts. (This commenting service doesn't inject controversial tracking ads like Disqus does.) You will need to Commento.io account + plan ($5/month) to authorize Commento with your domain (no other configuration should be required). If you don't want comments, in the \_config.yml file, change the `comments: true` properties (under `defaults`) to `comments: false` in every instance. Then in the commento.html include file (inside \_includes), the `{% raw %}{% unless page.comments == false %} ... {% endunless %}{% endraw %}` logic will not insert the Commentio form.
-
 ## Relative links and offline viewing
 
 This theme uses relative links throughout so that you can view the site offline and not worry about which server or directory you're hosting it. It's common with tech docs to push content to an internal server for review prior to pushing the content to an external server for publication. Because of the need for seamless transferrence from one host to another, the site has to use relative links.
@@ -355,16 +382,6 @@ For external URLs, use `external_url` in the item property, as shown in the exam
 
 Note that the topnav has two sections: `topnav` and `topnav_dropdowns`. The topnav section contains single links, while the `topnav_dropdowns` section contains dropdown menus. The two sections are independent of each other.
 
-## Generating PDF
-
-If you want to generate PDF, you'll need a license for [Prince XML](http://www.princexml.com/). You will also need to [install Prince](http://www.princexml.com/doc/installing/).  You can generate PDFs by product (but not for every product on the site combined together into one massive PDF). Prince will work even without a license, but it will imprint a small Prince image on the first page, and you're supposed to buy the license to use it.
-
-If you're on Windows, install [Git Bash client](https://git-for-windows.github.io/) rather than using the default Windows command prompt.
-
-Open up the css/printstyles.css file and customize the email address (`youremail@domain.com`) that is listed there. This email address appears in the bottom left footer of the PDF output. You'll also need to create a PDF configuration file following the examples shown in the pdfconfigs folder, and also customize some build scripts following the same pattern shown in the root: pdf-product1.sh
-
-See the section on [Generating PDFs][mydoc_generating_pdfs] for more details about setting the theme up for this output.
-
 ## Blogs / News
 
 For blog posts, create your markdown files in the \_posts folder following the sample formats. Post file names always begin with the date (YYYY-MM-DD-title).
@@ -372,41 +389,3 @@ For blog posts, create your markdown files in the \_posts folder following the s
 The news/news.html file displays the posts, and the news_archive.html file shows a yearly history of posts. In documentation, you might use the news to highlight product features outside of your documentation, or to provide release notes and other updates.
 
 See [Posts][mydoc_posts] for more information.
-
-## Markdown
-
-This theme uses [kramdown markdown](http://kramdown.gettalong.org/). kramdown is similar to Github-flavored Markdown, except that when you have text that intercepts list items, the spacing of the intercepting text must align with the spacing of the first character after the space of a numbered list item. Basically, with your list item numbering, use two spaces after the dot in the number, like this:
-
-```
-1.  First item
-2.  Second item
-3.  Third item
-```
-
-When you want to insert paragraphs, notes, code snippets, or other matter in between the list items, use four spaces to indent. The four spaces will line up with the first letter of the list item (the <b>F</b>irst or <b>S</b>econd or <b>T</b>hird).
-
-```
-1.  First item
-
-    ```
-    alert("hello");
-    ```
-
-2.  Second item
-
-    Some pig!
-
-3.  Third item
-```
-
-See the topics under "Formatting" in the sidebar for more information.
-
-## Automated links
-
-If you want to use an automated system for managing links, see [Automated Links][mydoc_hyperlinks.html#automatedlinks]. This approach automatically creates a list of Markdown references to simplify linking.
-
-## Other instructions
-
-The content here is just a getting started guide only. For other details in working with the theme, see the various sections in the sidebar.
-
-{% include links.html %}
