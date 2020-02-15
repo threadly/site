@@ -1,7 +1,7 @@
 ---
 title:  "New website"
 published: true
-permalink: newsite.html
+permalink: newsite2020.html
 summary: 
 tags: [news]
 ---

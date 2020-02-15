@@ -51,18 +51,6 @@ Litesockets can be included from the maven central coordinates `org.threadly:lit
 
 ## News OLD
 
-### February 13th - threadly 5.43 + threadly-test 0.1 released
-Most notable is the move of the org.threadly.test package to the new <a href="https://github.com/threadly/threadly-test">threadly-test</a> archive (maven coordinates `org.threadly:threadly-test:0.1`).  This is planned to be the last release before we switch to the 6.0 API.  The <a href="https://github.com/threadly/threadly/releases/tag/release-5.43">release details</a> as always provides complete details on included changes.
-
-### December 9th - threadly 5.42 released
-5.42 provides performance improvements to RateLimiterExecutor and ExecutorLimiter.  The gains in RateLimiterExecutor being most significant, providing huge improvements in cases where thread contention exists. 
-
-### October 24th - threadly 5.41 released
-Another 5.X release focused primarily on performance improvements and other internal updates.  The <a href="https://github.com/threadly/threadly/releases/tag/release-5.41">release details</a> outlines the specific areas of improvement.
-
-### September 4th - threadly 5.40 released
-As we start to think more about a 6.0 release, backwards compatible API changes have been provided in the new <a href="https://github.com/threadly/threadly/releases/tag/release-5.40">5.40 release</a>.  In this we moved and renamed Watchdog into the new watchdog package.  As part of this we also added a new "PollingWatchdog" to be able to provide more flexible timeout mechanics when desired.
-
 ### August 25th - threadly 5.39 released
 <a href="https://github.com/threadly/threadly/releases/tag/release-5.39">5.39</a> released, adding ConfigureableThreadFactory.builder() as an easier way to configure the ThreadFactory.  Also included are some minor internal improvements to ListenableFuture.map operations.  We are starting to formalize a 6.0 release, take a look at the <a href="https://github.com/threadly/threadly/milestone/53">6.0 Release Milestone</a>.  If you have any ideas of what would be good to include in a upcoming 6.0, or even a future 7.0 release, feel free to open an <a href="https://github.com/threadly/threadly/issues">issue</a>.
 
