@@ -6,6 +6,6 @@ summary:
 tags: [news, release, release-threadly]
 ---
 
-5.42 provides performance improvements to RateLimiterExecutor and ExecutorLimiter.  The gains in RateLimiterExecutor being most significant, providing huge improvements in cases where thread contention exists. 
+This release provides performance improvements to <a href="javadocs/5.43/org/threadly/concurrent/wrapper/limiter/RateLimiterExecutor.html">RateLimiterExecutor</a> and <a href="javadocs/5.43/org/threadly/concurrent/wrapper/limiter/ExecutorLimiter.html">ExecutorLimiter</a>.  The gains in `RateLimiterExecutor` being most significant, providing huge improvements in cases where thread contention exists. 
 
 {% include links.html %}

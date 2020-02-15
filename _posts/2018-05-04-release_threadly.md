@@ -1,5 +1,5 @@
 ---
-title:  "Threadly 5.18"
+title:  "Threadly 5.18 release"
 published: true
 permalink: release20180504.html
 summary: 
