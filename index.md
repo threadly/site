@@ -34,18 +34,18 @@ Use the mysql AuroraArc driver with the maven coordinates `org.threadly:auroraAr
 
 Litesockets can be included from the maven central coordinates `org.threadly:litesockets:4.14`.
 
-## News
+## News v2
 <div class="post-list">
     {% for post in site.posts limit:10 %}
 
-### <a class="post-link" href="{{ post.url | remove: "/" }}">{{ post.title }}</a></h2>
+### <a class="post-link" href="{{ post.url | remove: "/" }}">{{ post.title }}</a>
     <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} /
         {% for tag in post.tags %}
 
             <a href="{{ "tag_" | append: tag | append: ".html"}}">{{tag}}</a>{% unless forloop.last %}, {% endunless%}
 
             {% endfor %}</span>
-    <p>{% if post.summary %} {{ post.summary | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ post.content | truncatewords: 50 | strip_html }} {% endif %}</p>
+    <p>{% if page.summary %} {{ page.summary | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ post.content | truncatewords: 50 | strip_html }} {% endif %}</p>
 
     {% endfor %}
 </div>
@@ -404,3 +404,5 @@ For blog posts, create your markdown files in the \_posts folder following the s
 The news/news.html file displays the posts, and the news_archive.html file shows a yearly history of posts. In documentation, you might use the news to highlight product features outside of your documentation, or to provide release notes and other updates.
 
 See [Posts][mydoc_posts] for more information.
+
+{% include links.html %}
