@@ -38,7 +38,7 @@ Litesockets can be included from the maven central coordinates `org.threadly:lit
 <div class="post-list">
     {% for post in site.posts limit:20 %}
 
-### <a class="post-link" href="{{ post.url | remove: "/" }}">{{ post.title }}</a>
+<h5><a class="post-link" href="{{ post.url | remove: "/" }}">{{ post.title }}</a></h5>
     <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} /
         {% for tag in post.tags %}
             <a href="{{ "tag_" | append: tag | append: ".html"}}">{{tag}}</a>{% unless forloop.last %}, {% endunless%}
