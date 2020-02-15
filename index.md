@@ -1,7 +1,6 @@
 ---
-title: "Threadly - High performance java libraries"
+title: "Threadly Overview"
 keywords: threadly concurrency java aurora jdbc
-tags: [getting_started]
 sidebar: mydoc_sidebar
 permalink: index.html
 summary: A collection of java libraries to assist with development of java services to help bring new levels of safety, performance, and reliability.concurrent java applications.  Ranging from concurrency tools designed to complement to java.util.concurrent, unit testing tools, NIO netwrking, AWS Aurora JDBC driver.
@@ -36,6 +35,29 @@ Use the mysql AuroraArc driver with the maven coordinates `org.threadly:auroraAr
 Litesockets can be included from the maven central coordinates `org.threadly:litesockets:4.14`.
 
 ## News
+    <div class="post-list">
+        {% for post in site.posts limit:10 %}
+
+
+    <h2><a class="post-link" href="{{ post.url | remove: "/" }}">{{ post.title }}</a></h2>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} /
+            {% for tag in post.tags %}
+
+                <a href="{{ "tag_" | append: tag | append: ".html"}}">{{tag}}</a>{% unless forloop.last %}, {% endunless%}
+
+                {% endfor %}</span>
+        <p>{% if page.summary %} {{ page.summary | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ post.content | truncatewords: 50 | strip_html }} {% endif %}</p>
+
+        {% endfor %}
+
+        <p><a href="feed.xml" class="btn btn-primary navbar-btn cursorNorm" role="button">RSS Subscribe{{tag}}</a></p>
+
+<hr />
+        <p>See more posts from the <a href="news_archive.html">News Archive</a>. </p>
+
+    </div>
+
+## News OLD
 
 ### February 16th - New website
 A long overdue replacement of the website.  This new site allows us to better provide documentation across all of our libraries and tools.  We can now provide a lot more information with this layout, and links to all our javadocs.
