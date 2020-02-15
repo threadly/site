@@ -2,7 +2,7 @@
 title:  "New website"
 published: true
 permalink: newsite.html
-#summary: ""
+summary: 
 tags: [news]
 ---
 
