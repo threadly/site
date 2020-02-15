@@ -34,11 +34,11 @@ Use the mysql AuroraArc driver with the maven coordinates `org.threadly:auroraAr
 
 Litesockets can be included from the maven central coordinates `org.threadly:litesockets:4.14`.
 
-## News v5
+## News
 <div class="post-list">
     {% for post in site.posts limit:20 %}
 
-<a class="post-link" href="{{ post.url | remove: "/" }}">{{ post.title }}</a>
+<h5><a class="post-link" href="{{ post.url | remove: "/" }}">{{ post.title }}</a></h5>
     <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} /
         {% for tag in post.tags %}
             <a href="{{ "tag_" | append: tag | append: ".html"}}">{{tag}}</a>{% unless forloop.last %}, {% endunless%}
@@ -50,9 +50,6 @@ Litesockets can be included from the maven central coordinates `org.threadly:lit
 </div>
 
 ## News OLD
-
-### February 16th - New website
-A long overdue replacement of the website.  This new site allows us to better provide documentation across all of our libraries and tools.  We can now provide a lot more information with this layout, and links to all our javadocs.
 
 ### February 13th - threadly 5.43 + threadly-test 0.1 released
 Most notable is the move of the org.threadly.test package to the new <a href="https://github.com/threadly/threadly-test">threadly-test</a> archive (maven coordinates `org.threadly:threadly-test:0.1`).  This is planned to be the last release before we switch to the 6.0 API.  The <a href="https://github.com/threadly/threadly/releases/tag/release-5.43">release details</a> as always provides complete details on included changes.
