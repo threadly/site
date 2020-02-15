@@ -34,7 +34,7 @@ Use the mysql AuroraArc driver with the maven coordinates `org.threadly:auroraAr
 
 Litesockets can be included from the maven central coordinates `org.threadly:litesockets:4.14`.
 
-## News v2
+## News v4
 <div class="post-list">
     {% for post in site.posts limit:20 %}
 
@@ -45,7 +45,7 @@ Litesockets can be included from the maven central coordinates `org.threadly:lit
             <a href="{{ "tag_" | append: tag | append: ".html"}}">{{tag}}</a>{% unless forloop.last %}, {% endunless%}
 
             {% endfor %}</span>
-    <p>{% if post.summary %} {{ post.summary | strip_html | strip_newlines | truncate: 160 }} {% else %} {{ post.content | truncatewords: 100 | strip_html }} {% endif %}</p>
+    <p>{% if post.summary %} {{ post.summary | strip_html | strip_newlines | truncate: 200 }} {% else %} {{ post.content | truncatewords: 200 | strip_html }} {% endif %}</p>
 
     {% endfor %}
 </div>
