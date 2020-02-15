@@ -34,11 +34,11 @@ Use the mysql AuroraArc driver with the maven coordinates `org.threadly:auroraAr
 
 Litesockets can be included from the maven central coordinates `org.threadly:litesockets:4.14`.
 
-## News v2
+## News v3
 <div class="post-list">
-    {% for post in site.posts limit:10 %}
+    {% for post in site.posts limit:20 %}
 
-### <a class="post-link" href="{{ post.url | remove: "/" }}">{{ post.title }}</a>
+### {{ post.title }}
     <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }} /
         {% for tag in post.tags %}
 
