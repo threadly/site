@@ -5,7 +5,7 @@ search: exclude
 
 <html>
 <head>
-<title> Tooltip Demo</title>
+<title>Tooltip Demo</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -30,22 +30,9 @@ $.get( url, function( data ) {
  why I'm using attr here. If you just want to insert content on the page, use append and remove the data-content argument from the parentheses.*/
 
     $.each(data.entries, function(i, page) {
-        if (page.doc_id == "basketball") {
-            $( "#basketball" ).attr( "data-content", page.body );
+        if (page.doc_id == "asynchronous") {
+            $( "#asynchronous" ).attr( "data-content", page.body );
         }
-
-        if (page.doc_id == "baseball") {
-            $( "#baseball" ).attr( "data-content", page.body );
-        }
-        if (page.doc_id == "football") {
-            $( "#football" ).attr( "data-content", page.body );
-        }
-
-        if (page.doc_id == "soccer") {
-            $( "#soccer" ).attr( "data-content", page.body );
-        }
-
-
         });
     });
 
@@ -70,10 +57,4 @@ body {padding-left:50px;}
 
 <!-- the glyphicon class provides the info icon.-->
 
-<p>Basketball <span class="glyphicon glyphicon-info-sign" id="basketball" data-toggle="popover"></span></p>
-
-<p>Baseball <span class="glyphicon glyphicon-info-sign" id="baseball" data-toggle="popover"></span></p>
-
-<p>Football <span class="glyphicon glyphicon-info-sign" id="football" data-toggle="popover"></span></p>
-
-<p>Soccer <span class="glyphicon glyphicon-info-sign" id="soccer" data-toggle="popover"></span></p>
+<p>Asynchronous <span class="glyphicon glyphicon-info-sign" id="asynchronous" data-toggle="popover"></span></p>
