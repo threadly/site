@@ -1,7 +1,7 @@
 ---
 title: "Threadly Overview"
 keywords: threadly concurrency java aurora jdbc
-sidebar: mydoc_sidebar
+sidebar: home_sidebar
 permalink: index.html
 summary: A collection of java libraries to assist with development of java services to help bring new levels of safety, performance, and reliability.concurrent java applications.  Ranging from concurrency tools designed to complement to java.util.concurrent, unit testing tools, NIO netwrking, AWS Aurora JDBC driver.
 ---

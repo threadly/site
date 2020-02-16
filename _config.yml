@@ -101,10 +101,6 @@ defaults:
 
 sidebars:
 - home_sidebar
-- mydoc_sidebar
-- product1_sidebar
-- product2_sidebar
-- other
 
 description: "A library of java tools to assist with development of concurrent java applications. This is designed to be a complement to java.util.concurrent to provide functionality more tools for making safe concurrent implementations."
 # the description is used in the feed.xml file

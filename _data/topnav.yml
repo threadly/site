@@ -8,7 +8,6 @@ topnav:
     - title: News
       url: /news
 
-#Topnav dropdowns
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
@@ -18,5 +17,3 @@ topnav_dropdowns:
           url: /mydoc_introduction.html
         - title: Product 1
           url: /p1_landing_page.html
-        - title: Product 2
-          url: /p2_landing_page.html
