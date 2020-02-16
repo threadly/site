@@ -16,7 +16,7 @@ entries:
     output: web
     folderitems:
     - title: Threadly
-      url: https://github.com/threadly/threadly
+      url: "https://github.com/threadly/threadly"
       output: web
     - title: Threadly-Test
       url: https://github.com/threadly/threadly-test
