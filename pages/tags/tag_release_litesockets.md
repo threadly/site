@@ -1,8 +1,8 @@
 ---
-title: "Navigation pages"
-tagName: navigation
+title: "Release Litesockets"
+tagName: release-litesockets
 search: exclude
-permalink: tag_navigation.html
+permalink: tag_release_litesockets.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

@@ -10,4 +10,5 @@ allowed-tags:
   - release-auroraArc
   - release-ambush
   - release-litesockets
+  - benchmark
   - troubleshooting

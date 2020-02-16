@@ -1,8 +1,8 @@
 ---
-title: "Mobile Pages"
+title: "Benchmark"
+tagName: benchmark
 search: exclude
-tagName: mobile
-permalink: tag_mobile.html
+permalink: tag_benchmark.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

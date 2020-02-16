@@ -1,12 +1,11 @@
 ---
-title: "Special layout pages"
-tagName: special_layouts
+title: "Release Ambush"
+tagName: release-ambush
 search: exclude
-permalink: tag_special_layouts.html
+permalink: tag_release_ambush.html
 sidebar: mydoc_sidebar
 folder: tags
 ---
-
 {% include taglogic.html %}
 
 {% include links.html %}

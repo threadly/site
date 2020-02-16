@@ -1,8 +1,8 @@
 ---
-title: "Formatting pages"
-tagName: formatting
+title: "Release Threadly"
+tagName: release-threadly
 search: exclude
-permalink: tag_formatting.html
+permalink: tag_release_threadly.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

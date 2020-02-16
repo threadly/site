@@ -1,8 +1,8 @@
 ---
-title: "Single sourcing pages"
-tagName: single_sourcing
+title: "Release Threaly-Test"
+tagName: release-test
 search: exclude
-permalink: tag_single_sourcing.html
+permalink: tag_release_test.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

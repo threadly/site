@@ -1,8 +1,8 @@
 ---
-title: "Collaboration pages"
-tagName: collaboration
+title: "Release"
+tagName: release
 search: exclude
-permalink: tag_collaboration.html
+permalink: tag_release.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

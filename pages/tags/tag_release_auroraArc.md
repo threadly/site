@@ -1,8 +1,8 @@
 ---
-title: "Publishing pages"
-tagName: publishing
+title: "Release AuroraArc"
+tagName: release-auroraArc
 search: exclude
-permalink: tag_publishing.html
+permalink: tag_release_auroraArc.html
 sidebar: mydoc_sidebar
 folder: tags
 ---
