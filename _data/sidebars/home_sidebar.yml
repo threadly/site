@@ -5,17 +5,49 @@ entries:
   levels: one
   folders:
 
-  - title: Products
+  - title: Site
     output: web
     folderitems:
     - title: News
       url: /news.html
       output: web
-    - title: Theme instructions
-      url: /mydoc_introduction.html
+
+  - title: GitHub Projects
+    output: web
+    folderitems:
+    - title: Threadly
+      url: https://github.com/threadly/threadly
       output: web
-    - title: Product 1
-      url: /p1_landing_page.html
+    - title: Threadly-Test
+      url: https://github.com/threadly/threadly-test
+      output: web
+    - title: AuroraArc
+      url: https://github.com/threadly/auroraArc
+      output: web
+    - title: Litesockets
+      url: https://github.com/threadly/litesockets
+      output: web
+    - title: Ambush
+      url: https://github.com/threadly/ambush
+      output: web
+
+  - title: Latest Javadocs
+    output: web
+    folderitems:
+    - title: Threadly
+      url: /javadocs/5.43/index.html
+      output: web
+    - title: Threadly-Test
+      url: https://threadly.github.io/threadly-test/javadocs/0.1/
+      output: web
+    - title: AuroraArc
+      url: https://github.com/threadly/auroraArc
+      output: web
+    - title: Litesockets
+      url: https://github.com/threadly/litesockets
+      output: web
+    - title: Ambush
+      url: https://github.com/threadly/ambush
       output: web
 
   - title: Tag archives
