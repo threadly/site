@@ -15,7 +15,7 @@ Beyond the pools, threadly's [ListenableFuture](javadocs/threadly/5.43/threadly/
 
 To get a more complete overview of our features take a look at our [threadly features wiki page](https://github.com/threadly/threadly/wiki/Threadly-Features).
 
-Include threadly in your project with the maven coordinates `org.threadly:threadly:5.43`.
+Include threadly in your project with the maven coordinates `org.threadly:threadly:6.0`.
 
 ## Threadly Unit Test Overview
 ![Build status](https://badge.buildkite.com/8bfb74c7efa06fb26fd53f710996951a4e907a8b72d76ae8a6.svg?branch=master)
@@ -24,7 +24,7 @@ Include threadly in your project with the maven coordinates `org.threadly:thread
 
 To get a more complete overview of our test features take a look at our [threadly-test features wiki page](https://github.com/threadly/threadly-test/wiki/Threadly-Features,-Unit-Testing).
 
-Include threadly-test in your project with the maven coordinates `org.threadly:threadly-test:0.1`.
+Include threadly-test in your project with the maven coordinates `org.threadly:threadly-test:1.0`.
 
 ## AuroraArc Overview
 ![Build status](https://badge.buildkite.com/a2ee5480877e0b8effd44d52e5c71673abff406b8fb8d994d8.svg?branch=master)
