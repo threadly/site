@@ -38,10 +38,10 @@ entries:
     output: web
     folderitems:
     - title: Threadly
-      url: javadocs/threadly/5.43/index.html
+      url: javadocs/threadly/6.0/
       output: web
     - title: Threadly-Test
-      url: javadocs/threadly-test/0.1/
+      url: javadocs/threadly-test/1.0/
       output: web
     - title: Litesockets
       url: javadocs/litesockets/4.14/
@@ -53,11 +53,11 @@ entries:
   - title: Latest Artifacts
     output: web
     folderitems:
-    - title: Threadly 5.43
-      url: https://github.com/threadly/threadly/releases/download/release-5.43/threadly-5.43.jar
+    - title: Threadly 6.0
+      url: https://github.com/threadly/threadly/releases/download/release-6.0/threadly-6.0.jar
       output: web
-    - title: Threadly-Test 0.1
-      url: https://github.com/threadly/threadly-test/releases/download/release-0.1/threadly-test-0.1.jar
+    - title: Threadly-Test 1.0
+      url: https://github.com/threadly/threadly-test/releases/download/release-1.0/threadly-test-1.0.jar
       output: web
     - title: Litesockets 4.14
       url: https://github.com/threadly/litesockets/releases/download/release-4.14/litesockets-4.14.jar
