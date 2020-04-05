@@ -38,7 +38,7 @@ entries:
     output: web
     folderitems:
     - title: Threadly
-      url: javadocs/threadly/6.0/
+      url: javadocs/threadly/6.1/
       output: web
     - title: Threadly-Test
       url: javadocs/threadly-test/1.0/
@@ -53,8 +53,8 @@ entries:
   - title: Latest Artifacts
     output: web
     folderitems:
-    - title: Threadly 6.0
-      url: https://github.com/threadly/threadly/releases/download/release-6.0/threadly-6.0.jar
+    - title: Threadly 6.1
+      url: https://github.com/threadly/threadly/releases/download/release-6.1/threadly-6.1.jar
       output: web
     - title: Threadly-Test 1.0
       url: https://github.com/threadly/threadly-test/releases/download/release-1.0/threadly-test-1.0.jar
