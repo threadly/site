@@ -15,7 +15,7 @@ Beyond the pools, threadly's [ListenableFuture](javadocs/threadly/6.1/threadly/c
 
 To get a more complete overview of our features take a look at our [threadly features wiki page](https://github.com/threadly/threadly/wiki/Threadly-Features).
 
-Include threadly in your project with the maven coordinates `org.threadly:threadly:6.0`.
+Include threadly in your project with the maven coordinates `org.threadly:threadly:6.1`.
 
 ## Threadly Unit Test Overview
 ![Build status](https://badge.buildkite.com/8bfb74c7efa06fb26fd53f710996951a4e907a8b72d76ae8a6.svg?branch=master)
