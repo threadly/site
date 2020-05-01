@@ -11,6 +11,9 @@ entries:
     - title: News
       url: news.html
       output: web
+    - title: Discussion
+      url: https://threadly.zulipchat.com
+      output: web
     - title: Threadly Wiki
       url: https://github.com/threadly/threadly/wiki
       output: web

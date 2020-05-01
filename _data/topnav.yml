@@ -5,6 +5,8 @@ topnav:
   items:
     - title: GitHub
       external_url: https://github.com/threadly/
+    - title: Discussion
+      external_url: https://threadly.zulipchat.com
     - title: News
       url: /news
 
