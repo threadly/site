@@ -50,7 +50,7 @@ Litesockets can be included from the maven central coordinates `org.threadly:lit
             <a href="{{ "tag_" | append: tag | append: ".html"}}">{{tag}}</a>{% unless forloop.last %}, {% endunless%}
             {% endfor %}</span>
 
-    <p>{% if post.summary %} {{ post.summary | strip_newlines | truncate: 200 }} {% else %} {{ post.content | truncatewords: 200 }} {% endif %}</p>
+    <p>{% if post.summary %} {{ post.summary | strip_newlines | truncatewords: 200 }} {% else %} {{ post.content | truncatewords: 200 }} {% endif %}</p>
 
     {% endfor %}
 </div>

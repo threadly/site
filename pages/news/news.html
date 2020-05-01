@@ -19,7 +19,7 @@ folder: news
                 <a href="{{ "tag_" | append: tag | append: ".html"}}">{{tag}}</a>{% unless forloop.last %}, {% endunless%}
 
                 {% endfor %}</span>
-        <p>{% if page.summary %} {{ page.summary | strip_newlines | truncate: 200 }} {% else %} {{ post.content | truncatewords: 200 }} {% endif %}</p>
+        <p>{% if page.summary %} {{ page.summary | strip_newlines | truncatewords: 200 }} {% else %} {{ post.content | truncatewords: 200 }} {% endif %}</p>
 
         {% endfor %}
 
