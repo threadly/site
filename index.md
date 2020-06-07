@@ -31,7 +31,7 @@ Include threadly-test in your project with the maven coordinates `org.threadly:t
 
 [AuroraArc](https://github.com/threadly/auroraArc) is an AWS Aurora aware JDBC driver.  This JDBC driver takes advantage of Aurora's rapid failover capabilities.  The driver monitors all members in the cluster individually and will distribute requests across the cluster to try and provide the best performance and reliability.  This includes using hints from the application to know when requests should be sent to replica servers.  It also interpets errors to try and provide degraded service if possible, or otherwise make use of Aurora's rapid failover capabilities.
 
-Use the mysql AuroraArc driver with the maven coordinates `org.threadly:auroraArc-mysql:0.14` and the postgresql AuroraArc driver with the coordinates `org.threadly:auroraArc-psql:0.14`.
+Use the mysql AuroraArc driver with the maven coordinates `org.threadly:auroraArc-mysql:0.15` and the postgresql AuroraArc driver with the coordinates `org.threadly:auroraArc-psql:0.15`.
 
 ## Litesockets Overview
 ![Build status](https://badge.buildkite.com/2a02aa42abb9df40641a133c719792b7c94a435f8a3c692653.svg?branch=master)

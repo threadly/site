@@ -14,4 +14,6 @@ This can also be useful in cost and latency optimizations.  If you know what ava
 
 This marks another huge step in providing the unique load and failover capabilities this driver is hoping to provide.
 
+** Update: 0.14 was not deployed to maven central correctly, use 0.15 instead
+
 {% include links.html %}
