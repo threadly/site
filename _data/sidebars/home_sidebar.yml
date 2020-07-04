@@ -56,8 +56,8 @@ entries:
   - title: Latest Artifacts
     output: web
     folderitems:
-    - title: Threadly 6.3
-      url: https://github.com/threadly/threadly/releases/download/release-6.3/threadly-6.3.jar
+    - title: Threadly 6.4
+      url: https://github.com/threadly/threadly/releases/download/release-6.4/threadly-6.4.jar
       output: web
     - title: Threadly-Test 1.0
       url: https://github.com/threadly/threadly-test/releases/download/release-1.0/threadly-test-1.0.jar
